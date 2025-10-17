@@ -1,0 +1,73 @@
+/* 🌿 Sidebar Container */
+.sidebar-modern {
+  background: #ffffff !important;
+  border-right: 1px solid #f0f0f0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+
+/* 🧭 Header */
+.sidebar-header-modern {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  height: 64px;
+  background: linear-gradient(90deg, #1677ff, #00bcd4);
+  border-bottom: 1px solid #e6f7ff;
+  box-shadow: 0 3px 8px rgba(22, 119, 255, 0.15);
+}
+
+/* 🧾 Title */
+.sidebar-title-modern {
+  margin: 0;
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* 🔘 Toggle Button */
+.sidebar-toggle-btn {
+  color: white !important;
+  border: none;
+  box-shadow: none;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+.sidebar-toggle-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* 📋 Menu */
+.sidebar-menu-modern {
+  background: #fff !important;
+  border: none;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+/* 🟦 Menu Items */
+.ant-menu-item {
+  margin: 5px 12px !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover & Active Effects */
+.ant-menu-item:hover {
+  background: #e6f7ff !important;
+  color: #1677ff !important;
+  transform: translateX(4px);
+}
+
+.ant-menu-item-selected {
+  background: #bae7ff !important;
+  color: #096dd9 !important;
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 #1677ff;
+}

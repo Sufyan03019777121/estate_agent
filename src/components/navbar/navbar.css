@@ -1,0 +1,24 @@
+.navbar_header{
+    background-color: #e4ffe8;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 0 20px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: rgba(1, 149, 11, 0.24) 0px 3px 8px;
+    padding-top: 14px;
+
+    .title{ 
+     color: green;
+     margin: 0 ;
+     font-size: 1.3rem;
+   }
+   .avatar{
+    background-color: #87d068;
+    cursor: pointer;
+   }
+
+}
+
+    
+    

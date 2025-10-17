@@ -1,0 +1,19 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+
+/* Content.css */
+
+.custom_content {
+  margin: 5px;
+  margin-top: 0px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  min-height: calc(100vh - 80px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

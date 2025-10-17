@@ -1,0 +1,128 @@
+/* 🌿 Main Container */
+.listings-container {
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* 🏡 Header Section */
+.listings-header {
+  background: linear-gradient(90deg, #1677ff, #00bcd4);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+}
+
+.listings-title {
+  color: #fff !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  margin: 0 !important;
+}
+
+/* 🖼️ Image Hover Effect */
+.listing-image {
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.listing-image:hover {
+  transform: scale(1.1);
+}
+
+/* 🏷️ Tags and Text */
+.listing-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.listing-category {
+  background-color: #1677ff !important;
+  color: white !important;
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.listing-furnished.yes {
+  background-color: #00c853 !important;
+  color: white !important;
+}
+
+.listing-furnished.no {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+.listing-area {
+  color: #555;
+}
+
+.listing-price {
+  color: #008000;
+  font-weight: 600;
+}
+
+.listing-date {
+  color: #999;
+  white-space: nowrap; 
+}
+
+
+.btn-edit {
+  background-color: #1677ff !important;
+  border-radius: 6px !important;
+}
+
+.btn-delete {
+  border-radius: 6px !important;
+}
+
+
+.listings-table {
+  width: 98%; 
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; 
+}
+.slider-wrapper {
+  width: 100px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.image-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+
+.listing-image {
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  color: #1890ff !important;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.ant-carousel .slick-dots li button {
+  background: #1890ff !important;
+}
+.mylist_image{
+  height: 70px;
+}
