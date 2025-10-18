@@ -20,6 +20,7 @@ const { TextArea } = Input;
 export default function NewListing() {
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onFinish = async (values) => {
     if (fileList.length === 0) {
@@ -27,6 +28,7 @@ export default function NewListing() {
       return;
     }
 
+    setLoading(true);
     try {
       const formData = new FormData();
       formData.append("category", values.category);
@@ -54,11 +56,17 @@ export default function NewListing() {
       console.error(error);
       message.error(error.response?.data?.message || "Failed to post property");
     }
+    setLoading(false);
   };
 
   return (
-    <div className="listing-container">
-      <Form layout="vertical" form={form} onFinish={onFinish} className="listing-form">
+    <div className="listing-container" style={{ minHeight: "60vh" }}>
+      <Form
+        layout="vertical"
+        form={form}
+        onFinish={onFinish}
+        className="listing-form"
+      >
         <Row gutter={[16, 10]}>
           {/* Category */}
           <Col xs={24} sm={12} md={8}>
@@ -76,6 +84,7 @@ export default function NewListing() {
                   { value: "plot", label: "Plot" },
                   { value: "commercial", label: "Commercial" },
                 ]}
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
               />
             </Form.Item>
           </Col>
@@ -87,7 +96,10 @@ export default function NewListing() {
               label="Furnished"
               rules={[{ required: true, message: "Select furnishing state" }]}
             >
-              <Radio.Group size="small">
+              <Radio.Group
+                size="small"
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6, padding: "4px" }}
+              >
                 <Radio value="unfurnished">Unfurnished</Radio>
                 <Radio value="furnished">Furnished</Radio>
               </Radio.Group>
@@ -110,6 +122,7 @@ export default function NewListing() {
                   { value: 3, label: "3" },
                   { value: 4, label: "4+" },
                 ]}
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
               />
             </Form.Item>
           </Col>
@@ -129,6 +142,7 @@ export default function NewListing() {
                   { value: 2, label: "2" },
                   { value: 3, label: "3+" },
                 ]}
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
               />
             </Form.Item>
           </Col>
@@ -140,7 +154,16 @@ export default function NewListing() {
               label="Area (Marla)"
               rules={[{ required: true, message: "Enter area" }]}
             >
-              <InputNumber min={0} size="small" style={{ width: "100%" }} placeholder="Area" />
+              <InputNumber
+                min={0}
+                size="small"
+                style={{
+                  width: "100%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                  borderRadius: 6,
+                }}
+                placeholder="Area"
+              />
             </Form.Item>
           </Col>
 
@@ -151,7 +174,16 @@ export default function NewListing() {
               label="Price (Rs)"
               rules={[{ required: true, message: "Enter price" }]}
             >
-              <InputNumber min={0} size="small" style={{ width: "100%" }} placeholder="Price" />
+              <InputNumber
+                min={0}
+                size="small"
+                style={{
+                  width: "100%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                  borderRadius: 6,
+                }}
+                placeholder="Price"
+              />
             </Form.Item>
           </Col>
 
@@ -162,7 +194,11 @@ export default function NewListing() {
               label="Ad Title"
               rules={[{ required: true, message: "Enter ad title" }]}
             >
-              <Input size="small" placeholder="Short title" />
+              <Input
+                size="small"
+                placeholder="Short title"
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
+              />
             </Form.Item>
           </Col>
 
@@ -173,7 +209,11 @@ export default function NewListing() {
               label="Description"
               rules={[{ required: true, message: "Enter description" }]}
             >
-              <TextArea rows={2} placeholder="Brief property details" />
+              <TextArea
+                rows={2}
+                placeholder="Brief property details"
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
+              />
             </Form.Item>
           </Col>
 
@@ -187,6 +227,7 @@ export default function NewListing() {
                 beforeUpload={() => false}
                 multiple
                 maxCount={12}
+                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)", borderRadius: 6 }}
               >
                 {fileList.length >= 12 ? null : (
                   <div>
@@ -204,7 +245,12 @@ export default function NewListing() {
           {/* Submit Button */}
           <Col span={24}>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="submit-btn"
+                loading={loading}
+              >
                 Post Now
               </Button>
             </Form.Item>

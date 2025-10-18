@@ -1,11 +1,10 @@
 /* 🌿 Sidebar Container */
 .sidebar-modern {
   background: #ffffff !important;
-  border-right: 1px solid #f0f0f0;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-radius: 16px;
+  margin: 5px;
   overflow: hidden;
 }
 
@@ -47,7 +46,9 @@
   background: #fff !important;
   border: none;
   padding-top: 10px;
-  font-size: 15px;
+  padding-right: 15px;
+  font-size: 13.5px;
+  font-weight: 700;
 }
 
 /* 🟦 Menu Items */
