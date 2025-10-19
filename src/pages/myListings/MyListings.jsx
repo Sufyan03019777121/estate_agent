@@ -14,7 +14,7 @@ export default function MyListings() {
   // Fetch listings
   const fetchListings = async () => {
     try {
-      const res = await fetch("/api/agent-properties");
+      const res = await fetch("https://estate-backend-kyiz.onrender.com/api/agent-properties");
       const data = await res.json();
       setListings(data);
     } catch (err) {
@@ -38,7 +38,7 @@ export default function MyListings() {
         uid: i,
         name: img,
         status: "done",
-        url: `/uploads/${img}`,
+        url: `https://estate-backend-kyiz.onrender.com/uploads/${img}`,
       })) || []
     );
 
@@ -71,7 +71,7 @@ export default function MyListings() {
         .map((file) => file.name);
       existingImages.forEach((img) => formData.append("existingImages", img));
 
-      const res = await fetch(`/api/agent-properties/${editingItem._id}`, {
+      const res = await fetch(`https://estate-backend-kyiz.onrender.com/api/agent-properties/${editingItem._id}`, {
         method: "PUT",
         body: formData,
       });
@@ -94,7 +94,7 @@ export default function MyListings() {
     if (!id) return;
     if (!window.confirm("Are you sure to delete this property?")) return;
     try {
-      const res = await fetch(`/api/agent-properties/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://estate-backend-kyiz.onrender.com/api/agent-properties/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Failed to delete property");
       fetchListings();
       message.success("Property deleted");

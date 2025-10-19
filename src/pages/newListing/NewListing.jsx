@@ -45,7 +45,7 @@ export default function NewListing() {
         if (file.originFileObj) formData.append("images", file.originFileObj);
       });
 
-      const res = await axios.post("/api/agent-properties", formData, {
+      const res = await axios.post("https://estate-backend-kyiz.onrender.com/api/agent-properties", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
