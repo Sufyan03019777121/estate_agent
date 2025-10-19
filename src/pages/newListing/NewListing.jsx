@@ -13,7 +13,7 @@ import {
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
-import "./NewListing.css";
+import "./newListing.css";
 
 const { TextArea } = Input;
 
