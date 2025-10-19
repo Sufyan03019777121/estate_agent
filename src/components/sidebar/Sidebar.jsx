@@ -9,7 +9,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from "@ant-design/icons";
-import "./Sidebar.css";
+import "./sidebar.css";
 
 const { Sider } = Layout;
 
