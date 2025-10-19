@@ -8,12 +8,12 @@ export default defineConfig({
     proxy: {
       // Forward /api requests to backend
       '/api': {
-        target: 'https://estate-backend-kyiz.onrender.com',
+        target: '',
         changeOrigin: true,
         secure: false,
       },
       '/uploads': {
-        target: 'https://estate-backend-kyiz.onrender.com',
+        target: '',
         changeOrigin: true,
         secure: false,
       },
