@@ -14,7 +14,7 @@ export default function MyListings() {
   // Fetch listings
   const fetchListings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/agent-properties");
+      const res = await fetch("/api/agent-properties");
       const data = await res.json();
       setListings(data);
     } catch (err) {
@@ -38,7 +38,7 @@ export default function MyListings() {
         uid: i,
         name: img,
         status: "done",
-        url: `http://localhost:5000/uploads/${img}`,
+        url: `/uploads/${img}`,
       })) || []
     );
 
@@ -71,7 +71,7 @@ export default function MyListings() {
         .map((file) => file.name);
       existingImages.forEach((img) => formData.append("existingImages", img));
 
-      const res = await fetch(`http://localhost:5000/api/agent-properties/${editingItem._id}`, {
+      const res = await fetch(`/api/agent-properties/${editingItem._id}`, {
         method: "PUT",
         body: formData,
       });
@@ -94,7 +94,7 @@ export default function MyListings() {
     if (!id) return;
     if (!window.confirm("Are you sure to delete this property?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/agent-properties/${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/agent-properties/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Failed to delete property");
       fetchListings();
       message.success("Property deleted");
@@ -112,7 +112,7 @@ export default function MyListings() {
         imgs?.length ? (
           <Carousel prevArrow={<LeftOutlined />} nextArrow={<RightOutlined />} autoplay style={{ width: "120px" }}>
             {imgs.map((img, i) => (
-              <img key={i} src={`http://localhost:5000/uploads/${img}`} alt={`property-${i}`} style={{ width: "100px", height: "70px", objectFit: "cover" }} />
+              <img key={i} src={`/uploads/${img}`} alt={`property-${i}`} style={{ width: "100px", height: "70px", objectFit: "cover" }} />
             ))}
           </Carousel>
         ) : (
