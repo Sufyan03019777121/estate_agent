@@ -31,7 +31,7 @@ import "./myListings.css"
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://estate-backend-kyiz.onrender.com";
 
 export default function MyListings() {
   const [listings, setListings] = useState([]);

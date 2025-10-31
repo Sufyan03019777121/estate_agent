@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 
+// 🔹 API Base URL variable
+const API_BASE = "https://estate-backend-kyiz.onrender.com";
+
 export default function AgentLogin({ onLogin }) {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (values) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -22,7 +25,6 @@ export default function AgentLogin({ onLogin }) {
 
       switch (data.agent.status) {
         case "Verified":
-          // 🔹 Removed localStorage saving
           onLogin(data.agent);
           message.success("✅ Login successful");
           break;
@@ -52,6 +54,7 @@ export default function AgentLogin({ onLogin }) {
         border: "1px solid #f0f0f0",
         borderRadius: 8,
         background: "#fff",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
       }}
     >
       <h2 style={{ textAlign: "center", marginBottom: 20 }}>Agent Login</h2>
