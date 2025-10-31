@@ -48,13 +48,7 @@ export default function Sidebar({ setPage }) {
         >
           Dashboard
         </Menu.Item>
-        <Menu.Item
-          key="newListing"
-          icon={<FormOutlined />}
-          onClick={() => setPage("newListing")}
-        >
-          New Listing
-        </Menu.Item>
+       
         <Menu.Item
           key="myListings"
           icon={<UnorderedListOutlined />}
